@@ -304,17 +304,96 @@ window.addEventListener('scroll', () => {
 const navbarToggler = document.querySelector('.navbar-toggler');
 const navbarCollapse = document.querySelector('.navbar-collapse');
 
-if (navbarToggler) {
-    navbarToggler.addEventListener('click', () => {
-        navbarCollapse.classList.toggle('show');
-    });
-    
-    // Fermer le menu quand on clique sur un lien
-    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navbarCollapse.classList.remove('show');
+if (navbarToggler && navbarCollapse) {
+    // Vérifier si Bootstrap est disponible
+    if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+        // Utiliser l'API Bootstrap pour le collapse
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false
         });
-    });
+        
+        // Toggle manuel du bouton
+        navbarToggler.addEventListener('click', () => {
+            bsCollapse.toggle();
+        });
+        
+        // Fermer le menu quand on clique sur un lien interne (ancre)
+        document.querySelectorAll('.navbar-nav .nav-link[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (navbarCollapse.classList.contains('show')) {
+                    bsCollapse.hide();
+                }
+            });
+        });
+        
+        // Fermer le menu quand on clique en dehors de la navbar
+        document.addEventListener('click', (e) => {
+            const isClickInsideNavbar = navbarCollapse.contains(e.target) || navbarToggler.contains(e.target);
+            if (!isClickInsideNavbar && navbarCollapse.classList.contains('show')) {
+                bsCollapse.hide();
+            }
+        });
+        
+        // Fermer le menu avec la touche ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navbarCollapse.classList.contains('show')) {
+                bsCollapse.hide();
+            }
+        });
+        
+        // Gérer le changement d'état du collapse
+        navbarCollapse.addEventListener('show.bs.collapse', () => {
+            navbarToggler.classList.add('collapsed');
+            navbarToggler.setAttribute('aria-expanded', 'true');
+        });
+        
+        navbarCollapse.addEventListener('hide.bs.collapse', () => {
+            navbarToggler.classList.remove('collapsed');
+            navbarToggler.setAttribute('aria-expanded', 'false');
+        });
+    } else {
+        // Solution de secours sans Bootstrap
+        console.log('Bootstrap non détecté, utilisation de la solution de secours');
+        
+        // Toggle manuel
+        navbarToggler.addEventListener('click', (e) => {
+            e.preventDefault();
+            navbarCollapse.classList.toggle('show');
+            const isShown = navbarCollapse.classList.contains('show');
+            navbarToggler.classList.toggle('collapsed', !isShown);
+            navbarToggler.setAttribute('aria-expanded', isShown);
+        });
+        
+        // Fermer sur les liens internes
+        document.querySelectorAll('.navbar-nav .nav-link[href^="#"]').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarCollapse.classList.remove('show');
+                    navbarToggler.classList.add('collapsed');
+                    navbarToggler.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+        
+        // Fermer au clic extérieur
+        document.addEventListener('click', (e) => {
+            const isClickInsideNavbar = navbarCollapse.contains(e.target) || navbarToggler.contains(e.target);
+            if (!isClickInsideNavbar && navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+                navbarToggler.classList.add('collapsed');
+                navbarToggler.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Fermer avec ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+                navbarToggler.classList.add('collapsed');
+                navbarToggler.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
 }
 
 // ============================================

@@ -596,7 +596,7 @@ body {
 .contact-info-wrapper {
     background: white;
     border-radius: 20px;
-    padding: 40px;
+    padding: 30px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     height: 100%;
     position: relative;
@@ -604,6 +604,7 @@ body {
     transition: var(--transition);
     display: flex;
     flex-direction: column;
+    min-height: 400px;
 }
 
 .contact-info-wrapper::before {
@@ -623,14 +624,14 @@ body {
 
 .contact-info-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 .contact-info-title {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--dark-color);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     position: relative;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
@@ -641,11 +642,11 @@ body {
 .contact-info-title::after {
     content: '';
     position: absolute;
-    bottom: -12px;
+    bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
+    width: 60px;
+    height: 3px;
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     border-radius: 2px;
     box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
@@ -653,15 +654,15 @@ body {
 
 .contact-info-subtitle {
     color: #666;
-    font-size: 1.1rem;
-    margin-top: 25px;
+    font-size: 0.95rem;
+    margin-top: 18px;
     font-style: italic;
 }
 
 .contact-items {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     margin-bottom: auto;
     flex: 1;
 }
@@ -669,10 +670,10 @@ body {
 .contact-item {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 25px;
+    gap: 15px;
+    padding: 18px;
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    border-radius: 15px;
+    border-radius: 12px;
     transition: var(--transition);
     border: 2px solid transparent;
     position: relative;
@@ -696,45 +697,45 @@ body {
 
 .contact-item:hover {
     background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
-    transform: translateX(10px) scale(1.02);
+    transform: translateX(8px) scale(1.02);
     border-color: var(--primary-color);
-    box-shadow: 0 8px 25px rgba(0, 102, 204, 0.15);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.15);
 }
 
 .contact-icon-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: 50%;
     color: white;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     flex-shrink: 0;
     transition: var(--transition);
-    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
 }
 
 .contact-item:hover .contact-icon-wrapper {
-    transform: scale(1.15) rotate(8deg);
-    box-shadow: 0 8px 25px rgba(0, 102, 204, 0.4);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 18px rgba(0, 102, 204, 0.4);
 }
 
 .contact-content h4 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--dark-color);
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     position: relative;
 }
 
 .contact-content h4::after {
     content: '';
     position: absolute;
-    bottom: -4px;
+    bottom: -3px;
     left: 0;
-    width: 30px;
+    width: 25px;
     height: 2px;
     background: var(--primary-color);
     border-radius: 1px;
@@ -742,36 +743,36 @@ body {
 
 .contact-content p {
     color: #555;
-    line-height: 1.7;
+    line-height: 1.5;
     margin: 0;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
 }
 
 /* Social Media Links */
 .contact-social {
     text-align: center;
-    padding-top: 35px;
+    padding-top: 20px;
     border-top: 2px solid #f0f0f0;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .contact-social h5 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--dark-color);
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     position: relative;
 }
 
 .contact-social h5::after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: -6px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
+    width: 40px;
+    height: 2px;
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     border-radius: 2px;
 }
@@ -779,38 +780,38 @@ body {
 .contact-social .social-links {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .contact-social .social-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 212, 255, 0.1));
     border-radius: 50%;
     color: var(--primary-color);
     transition: var(--transition);
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     border: 2px solid transparent;
 }
 
 .contact-social .social-link:hover {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    transform: translateY(-8px) scale(1.15);
-    box-shadow: 0 12px 30px rgba(0, 102, 204, 0.4);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
     border-color: var(--primary-color);
 }
 
-/* Right Side - Map and Contact Form */
+/* Right Side - Map Only */
 .contact-map-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 30px;
     height: 100%;
+    min-height: 400px;
 }
 
 .map-container {
@@ -820,6 +821,9 @@ body {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
     overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .map-container:hover {
@@ -830,6 +834,9 @@ body {
 .map-container iframe {
     border-radius: 15px;
     transition: var(--transition);
+    flex: 1;
+    width: 100%;
+    min-height: 360px;
 }
 
 .map-container:hover iframe {
@@ -1188,13 +1195,62 @@ body {
 }
 
 /* ============================================
+   WHATSAPP FLOATING BUTTON
+   ============================================ */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+    transition: var(--transition);
+    z-index: 1000;
+    animation: whatsapp-pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+    color: white;
+}
+
+@keyframes whatsapp-pulse {
+    0%, 100% {
+        box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 10px 40px rgba(37, 211, 102, 0.6);
+    }
+}
+
+/* WhatsApp icon in navbar */
+.navbar-custom .nav-link .fab.fa-whatsapp {
+    color: #25D366 !important;
+    margin-right: 5px;
+}
+
+.navbar-custom .nav-link:hover .fab.fa-whatsapp {
+    color: #128C7E !important;
+}
+
+/* ============================================
    SCROLL TO TOP BUTTON
    ============================================ */
 
 .scroll-to-top {
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    right: 100px;
     width: 50px;
     height: 50px;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -1265,8 +1321,16 @@ body {
         width: 45px;
         height: 45px;
         bottom: 20px;
-        right: 20px;
+        right: 80px;
         font-size: 1rem;
+    }
+    
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.6rem;
     }
 }
 
